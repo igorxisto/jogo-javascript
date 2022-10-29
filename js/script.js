@@ -13,17 +13,15 @@ const loop = setInterval(()=>{
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px','');
 
-    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80){
+    if (pipePosition <= 110 && pipePosition > 0 && marioPosition < 80){
  
         pipe.style.animation = 'none'; 
         pipe.style.left = `${pipePosition}px`;
 
         mario.style.animation = 'none'; 
         mario.style.bottom  = `${marioPosition}px`;
-
-        // mario.src = './imagens/game-over.png';
         mario.src = './imagens/pika.gif';
-        mario.style.width = "100px";
+        mario.style.width = "85px";
         mario.style.marginLeft = '50px'
 
         clearInterval(loop);
@@ -33,4 +31,4 @@ const loop = setInterval(()=>{
 }, 10);
 
 document.addEventListener('keydown', jump)
-
+document.addEventListener('click', jump)
